@@ -101,3 +101,9 @@ AFTER ROUTES ARE SET OPEN INDEX.JS and set up our routes there
 
 SETTING UP A DATABASE
 
+
+
+
+
+https://www.npmjs.com/package/dotenv
+https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs
