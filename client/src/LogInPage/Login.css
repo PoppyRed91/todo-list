@@ -42,7 +42,7 @@
     border-radius: 10px;
   }
   
-  button {
+  .loginpagebtns {
     border: none;
     background-color: #53724a;
     padding: 20px;
