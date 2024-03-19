@@ -17,15 +17,21 @@ const router = require("./routes")
 */
 
 
-app.get('/', async (req, res) => {
-    try {
-        const result = await database.query("SELECT * from information_schema.tables");
-        res.json(result.rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Internal Server Error');
-    }
-});
+
+// post /signup/1
+function onSignUp(userName, password) {
+    // If username exits -> "User already exists" -> return;
+    // If not -> add username and password to the database
+
+}
+
+// get /signin/1
+function onSignIn(userName, password) {
+    // If username exits -> compare the given password
+    // with the password connected to the username in the database
+    // If it doesn't match -> return;
+    // If it matches -> Sign in
+}
 
 const port = 5000;
 
@@ -33,3 +39,7 @@ app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`)
 })
 
+// taskzilla.com/login -> routes on the front end from which the functions are called on the backend
+
+// taskzilla.com/login/0 -> call the function on the backend to sign up
+// taskzilla.com/login/1 -> call the function on the backend to sign in

@@ -1,4 +1,3 @@
-
 const { Pool } = require("pg");
 
 //making an instance of the pool and saving it to a variable
@@ -11,7 +10,7 @@ const pool = new Pool({
     password: pass[0]
 });
 
-// create table if it doesn't exist
+// create table
 
 module.exports = {
     query: (text, params) => pool.query(text, params)
