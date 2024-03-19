@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+
+import { SignUp } from './Login/SignUp.jsx';
+import React, { useState, useEffect } from "react";
 import { Login } from "./Login";
 import { Register } from "./Register";
 import "./App.css";
@@ -53,10 +55,13 @@ export default App;
   }, [])
 
   return (
+    <>
+    <SignUp></SignUp>
     <main className="main_container">
       <h1>Todos</h1>
       {message && <p>{message}</p>}
     </main>
+    </>
   );
 }
 
