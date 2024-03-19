@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SignUp from './Login/SignUp.jsx';
 
 export default function App() {
 
@@ -28,9 +29,12 @@ export default function App() {
   }, [])
 
   return (
+    <>
+    <SignUp></SignUp>
     <main className="main_container">
       <h1>Todos</h1>
       {message && <p>{message}</p>}
     </main>
+    </>
   );
 }
