@@ -1,4 +1,3 @@
-import styles from "./LandingPage.css";
 import image from "../Assets/TaskZilla-logo.png";
 import { Link } from "react-router-dom";
 
