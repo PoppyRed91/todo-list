@@ -1,46 +1,49 @@
 import React, { useState } from "react";
 import { Login } from "./Login";
-import { Register } from "./Register";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+/*import { Register } from "./Register";*/
 import "./App.css";
+import LandingPage from "./LandingPage/LandingPage";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login');
+  const [currentForm, setCurrentForm] = useState("login");
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
-  }
-
+  };
   return (
-
-    <div className="App">
-      {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-      }
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Login" element={<Login />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
 export default App;
 
-
 // import { useEffect, useState } from "react";
 
 // export default function App() {
 
-  /* - We will use the useStatehook to hold our message. 
+/* - We will use the useStatehook to hold our message. 
   We will then provide a conditional
   `{message && <p>{message}</p>}` it states if we have a message 
   we can display it in a paragraph tag on our web page. */
 
-  // const [message, setMessage] = useState("")
-  /* useEffect hook is used with an empty dependency array to run
+// const [message, setMessage] = useState("")
+/* useEffect hook is used with an empty dependency array to run
      the async getTodos function once our component is mounted.
      Our endpoint will return a readable stream so we will use the
      .json method to get our data from backend 
      - We will get an error ...blocked by CORS policy, add a proxy value
      to our package.json file to fix it*/
 
-  /* useEffect(() => {
+/* useEffect(() => {
     const getTodos = async () => {
       const res = await fetch("/api/todos");
       const todos = await res.json();
@@ -61,11 +64,3 @@ export default App;
 }
 
 */
-import LandingPage from "./LandingPage/LandingPage";
-const App = () => {
-  return ( <>
-<LandingPage/>
-  </> );
-}
- 
-export default App;
